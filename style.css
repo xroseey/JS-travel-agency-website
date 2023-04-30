@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  justify-content: center;
+  padding: auto;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+header {
+  border: 1px solid rgba(139, 129, 91, 0.356);
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 30px 16px;
+  border: 1px solid rgb(63, 53, 39);
+  border-radius: 13px;
+  background-color: rgba(232, 228, 219, 0.533);
+  box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
+  color: rgb(63, 53, 39);
+}
+
+nav ul li:hover {
+  background-color: rgba(115, 110, 110, 0.533);
+  transition: 0.9s;
+}
+
+nav ul li a {
+  color: black;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.panorama {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.panorama img {
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
+  max-height: 280px;
+  max-width: 380px;
+  margin-bottom: 36px;
+}
+
+main {
+  background: rgb(234, 229, 229);
+}
+
+h1 {
+  justify-content: center;
+  display: flex;
+  margin: 30px;
+  color: rgb(63, 53, 39);
+}
+
+.offers {
+  justify-content: center;
+  margin: 5%;
+}
+
+.offer {
+  border-radius: 10px;
+  background-repeat: repeat-y;
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  /* position: relative; */
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.offerFoto {
+  border: solid 3px rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  max-height: 200px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.offerFoto img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.offerTitle {
+  display: flex;
+  margin-right: 10px;
+}
+
+.offerPlace {
+  text-decoration: underline;
+  margin: 0 20px;
+}
+
+.offerFeatures {
+  display: flex;
+  margin: 0 20px;
+}
+
+.offerPrice {
+  display: flex;
+  margin: 0 20px;
+}
+
+h3,
+.offerPrice {
+  display: flex;
+  margin: 0 20px;
+}
+
+h2,
+.offerPrice {
+  display: flex;
+  margin: 0 20px;
+}
+
+button {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid rgb(63, 53, 39);
+  border-radius: 13px;
+  background-color: rgba(232, 228, 219, 0.533);
+  box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
+  color: rgb(63, 53, 39);
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: rgba(115, 110, 110, 0.533);
+  transition: 0.9s;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularz</title>
+    <script defer src="applicationForm.js"></script>
+    <link rel="stylesheet" type="text/css" href="applicationForm.css" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <a href="/index.html">
+          <img src="logo.png" class="logo" alt="app logo" />
+        </a>
+      </section>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#">♥ Obserwowane oferty</a>
+          </li>
+          <li><a href="#">O firmie</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Formularz zgłoszeniowy</h1>
+    <div class="formm">
+      <form id="form">
+        <h3>Twoje Dane</h3>
+        <div>
+          <div class="hidden" id="error"></div>
+          <input id="name" name="name" type="text" />
+          <label for="name">Imię i Nazwisko</label>
+        </div>
+
+        <div>
+          <input id="email" name="email" type="email" />
+          <label for="name">E-mail</label>
+        </div>
+
+        <div>
+          <label class="date" for="date">Data wyjazdu:</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <h3>Wybór dodatków</h3>
+
+        <h4>Czy potrzebujesz dodatkowych udogodnień?</h4>
+
+        <div>
+          <textarea id="notesPlus"></textarea>
+          <button type="button" id="saveBtn">Dodaj</button>
+        </div>
+        <h4>Z czego chcesz zrezygnować?</h4>
+
+        <div>
+          <textarea id="notesMinus"></textarea>
+          <button type="button" id="deleteBtn">Usuń</button>
+        </div>
+
+        <h4>Twoje wymagania:</h4>
+
+        <div id="form-placeholder"></div>
+
+        <h3>Płatność</h3>
+
+        <input type="radio" id="card" name="payment" value="credit" />
+        <label>Płatność przelewem</label>
+
+        <input type="radio" id="blik" name="payment" value="credit" />
+        <label>Płatność Blik</label>
+        <div>
+          <button type="button" id="comeBack">Powrót do wyboru</button>
+          <button type="submit" id="send">Wyślij</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

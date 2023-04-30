@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: auto;
+}
+
+header {
+  border: 1px solid rgba(139, 129, 91, 0.356);
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  background: rgb(234, 229, 229);
+}
+
+.logo {
+  display: flex;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 30px 16px;
+  border: 1px solid black;
+  border-radius: 13px;
+  background-color: rgba(232, 228, 219, 0.533);
+  box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li:hover {
+  background-color: rgba(115, 110, 110, 0.533);
+  transition: 0.9s;
+}
+
+nav ul li a {
+  color: black;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.end {
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.123);
+  margin: 0 20%;
+}
+
+.end .title {
+  display: flex;
+  margin: 36px;
+}
+
+.end .info {
+  display: flex;
+}
+
+.end .daneOs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+  padding: 20px 20px;
+}
+
+.daneWpisane {
+  margin: auto;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(63, 53, 39);
+  border-radius: 10px;
+  background-color: rgba(232, 228, 219, 0.533);
+  box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
+  color: rgb(63, 53, 39);
+  font-size: 14px;
+  padding: 10px 10px;
+}
+
+button:hover {
+  background-color: rgba(115, 110, 110, 0.533);
+  transition: 0.9s;
+}
+
+.end .endBtn {
+  padding: 30px;
+}
+
+.offer {
+  border-radius: 10px;
+  background-repeat: repeat-y;
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.offerFoto {
+  border: solid 3px rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  max-height: 200px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.offerFoto img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
