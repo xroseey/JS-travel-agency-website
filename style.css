@@ -76,7 +76,7 @@ h1 {
 
 .offers {
   justify-content: center;
-  margin: 5%;
+  margin: 7%;
 }
 
 .offer {
@@ -84,7 +84,6 @@ h1 {
   background-repeat: repeat-y;
   box-shadow: 0 0 48px 2px rgba(0, 0, 0, 0.5);
   display: flex;
-  /* position: relative; */
   padding: 10px;
   margin-top: 20px;
 }

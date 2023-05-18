@@ -12,15 +12,17 @@ const loadInputFromStore = (input, storeName) => {
 
   input.value = val;
 };
-
+console.log(allButtons);
 allButtons.forEach(function (button, index) {
   button.addEventListener("click", function () {
     const closestDiv = button.closest(".offer");
+    console.log(closestDiv);
     const closestImage = closestDiv.querySelector("img");
     const imageAttr = closestImage.getAttribute("src");
 
-    const closestPrice = closestDiv.querySelector("h2");
-    const priceAttr = closestPrice.getAttribute("price");
+    const closestPrice = closestDiv.querySelector(".price");
+    const priceAttr = closestPrice.innerText;
+    console.log(priceAttr, closestPrice);
     store.setItem("price", priceAttr);
 
     store.setItem("image", imageAttr);
@@ -28,9 +30,3 @@ allButtons.forEach(function (button, index) {
     window.location.href = "applicationForm.html";
   });
 });
-
-/// LOAD PRICE STORAGE
-
-// const closestPrice = closestDiv.querySelector("offerPrice");
-// const priceAttr = closestPrice.getAttribute("h2")
-// store.setItem("offerPrice", closestPrice);

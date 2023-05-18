@@ -90,6 +90,14 @@ form textarea {
   background-color: aliceblue;
 }
 
+.showPrice {
+  display: flex;
+  margin: 5% 0;
+  color: green;
+  font-size: 36px;
+  text-decoration: solid;
+}
+
 button {
   margin: 26px 70px 26px 26px;
   border: 1px solid rgb(63, 53, 39);

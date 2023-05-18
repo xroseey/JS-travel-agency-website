@@ -38,7 +38,7 @@
 
         <div>
           <input id="email" name="email" type="email" />
-          <label for="name">E-mail</label>
+          <label for="email">E-mail</label>
         </div>
 
         <div>
@@ -49,29 +49,53 @@
         <h3>Wybór dodatków</h3>
 
         <h4>Czy potrzebujesz dodatkowych udogodnień?</h4>
+        <p>Każde dodatkowe udogodnienie to + 1000 zł do zapłaty</p>
 
-        <div>
-          <textarea id="notesPlus"></textarea>
-          <button type="button" id="saveBtn">Dodaj</button>
+        <div id="price-checkboxes">
+          <input
+            type="checkbox"
+            id="all-inclusive"
+            name="all-inclusive"
+            value="all-inclusive"
+            class="checkbox"
+          />
+          <label id="all-inclusive" class="checkboxText" for="all-inclusive"
+            >all inclusive</label
+          >
+
+          <input
+            type="checkbox"
+            id="guide"
+            name="guide"
+            value="guide"
+            class="checkbox"
+          />
+          <label id="guide" class="checkboxText" for="guide"
+            >wycieczka z przewodnikiem</label
+          >
+
+          <input
+            type="checkbox"
+            id="spa"
+            name="spa"
+            value="spa"
+            class="checkbox"
+          />
+          <label id="spa" class="checkboxText" for="spa">spa</label>
         </div>
-        <h4>Z czego chcesz zrezygnować?</h4>
-
-        <div>
-          <textarea id="notesMinus"></textarea>
-          <button type="button" id="deleteBtn">Usuń</button>
-        </div>
-
-        <h4>Twoje wymagania:</h4>
 
         <div id="form-placeholder"></div>
 
         <h3>Płatność</h3>
 
+        <p class="showPrice" id="offerPrice"></p>
+        <p class="showPrice">zł</p>
+
         <input type="radio" id="card" name="payment" value="credit" />
-        <label>Płatność przelewem</label>
+        <label for="payment">Płatność przelewem</label>
 
         <input type="radio" id="blik" name="payment" value="credit" />
-        <label>Płatność Blik</label>
+        <label for="payment">Płatność Blik</label>
         <div>
           <button type="button" id="comeBack">Powrót do wyboru</button>
           <button type="submit" id="send">Wyślij</button>

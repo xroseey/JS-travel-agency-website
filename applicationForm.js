@@ -10,8 +10,44 @@ const $notesPlus = document.getElementById("notesPlus");
 const $notesMinus = document.getElementById("notesMinus");
 const $saveBtn = document.getElementById("saveBtn");
 const $deleteBtn = document.getElementById("deleteBtn");
+const $offerPrice = document.getElementById("offerPrice");
 
 const store = localStorage;
+
+//Price
+
+const storePrice = store.getItem("price");
+$offerPrice.innerText = storePrice;
+
+const checkboxesWrap = document.getElementById("price-checkboxes");
+console.log("check", checkboxesWrap);
+
+const checkboxes = checkboxesWrap.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach(function (button, index) {
+  button.addEventListener("change", function () {
+    const checkedArray = [];
+    checkboxes.forEach((el) => {
+      if (el.checked) {
+        return checkedArray.push(true);
+      }
+    });
+
+    const checkedElements = checkedArray.length;
+    console.log("test", checkedArray, checkedElements);
+
+    const price = store.getItem("price");
+
+    const finalPrice = +price + +checkedElements * 1000;
+    store.setItem("checkedItems", checkedElements);
+
+    $offerPrice.innerText = finalPrice;
+
+    store.setItem("priceFinal", finalPrice);
+  });
+});
+
+console.log("cacasdad", checkboxes);
 
 // button click
 const $backBtn = document.getElementById("comeBack");
@@ -42,8 +78,6 @@ const loadInputFromStore = (input, storeName) => {
 loadInputFromStore($name, "formName");
 loadInputFromStore($email, "formEmail");
 loadInputFromStore($dateInput, "formDate");
-loadInputFromStore($notesPlus, "notesPlus");
-loadInputFromStore($notesMinus, "notesMinus");
 
 // INPUT EVENT LISTENERS
 $name.addEventListener("input", (e) =>
@@ -56,14 +90,6 @@ $email.addEventListener("input", (e) =>
 
 $dateInput.addEventListener("input", (e) =>
   saveInputToStore(e.target.value, "formDate")
-);
-
-$notesPlus.addEventListener("input", (e) =>
-  saveInputToStore(e.target.value, "notesPlus")
-);
-
-$notesMinus.addEventListener("input", (e) =>
-  saveInputToStore(e.target.value, "notesMinus")
 );
 
 // walidacja danych ///
@@ -84,11 +110,7 @@ $form.addEventListener("submit", (e) => {
     $email.value === "" ||
     $email.value == null ||
     $dateInput.value === "" ||
-    $dateInput.value == null ||
-    $notesPlus.value === "" ||
-    $notesPlus.value == null ||
-    $notesMinus.value === "" ||
-    $notesMinus.value == null
+    $dateInput.value == null
   ) {
     messages.push("Uzupełnij dane poprawnie!");
   }
@@ -112,12 +134,6 @@ $form.addEventListener("submit", (e) => {
   store.setItem("date", $dateInput.value);
   store.removeItem("formDate");
 
-  store.setItem("notesPlus", $notesPlus.value);
-  store.removeItem("notesPlus");
-
-  store.setItem("notesMinus", $notesMinus.value);
-  store.removeItem("notesMinus");
-
   buy();
 });
 
@@ -127,28 +143,6 @@ $backBtn.addEventListener("click", (e) => {
   console.log({ e });
   window.location.href = "/";
 });
-
-// LIST WITH EXTRAS
-
-function clickHandler() {
-  const plusOption = $notesPlus.value;
-
-  const newOption = document.createElement("p");
-  newOption.innerText = `+ ${plusOption}`;
-  $placeholder.appendChild(newOption);
-}
-
-$saveBtn.addEventListener("click", clickHandler);
-
-function clickHandlerMinus() {
-  const minusOption = $notesMinus.value;
-
-  const deleteOption = document.createElement("p");
-  deleteOption.innerText = `- ${minusOption}`;
-  $placeholder.appendChild(deleteOption);
-}
-
-$deleteBtn.addEventListener("click", clickHandlerMinus);
 
 ////////data 14 dni
 
@@ -163,16 +157,3 @@ const futureDateString = new Date(today.setDate(today.getDate() + daysToAdd))
 
 $dateInput.setAttribute("min", todayDateString);
 $dateInput.setAttribute("max", futureDateString);
-
-////zdjęcia
-
-const allButtons = document.querySelectorAll("button");
-
-allButtons.forEach(function (button, index) {
-  button.addEventListener("click", function () {
-    const closestDiv = button.closest(".offer", "div");
-    const closestImage = closestDiv.querySelector("img");
-    const imageAttr = closestImage.getAttribute("src");
-    console.log("src: ", imageAttr);
-  });
-});
